@@ -32,3 +32,21 @@ for elf in elves:
                 table[x+i][y+j] = -1
                 count += 1
 print(count)
+# Part 2:
+overlap = {}
+table = [[[0] for i in range(max_height)] for j in range(max_width)]
+for elf in elves:
+    [id, x, y, width, height] = elf
+    overlap[id] = False
+    for i in range(width):
+        for j in range(height):
+            if table[x+i][y+j] == [0]:
+                table[x+i][y+j] = [id]
+            else:
+                table[x+i][y+j] += [id]
+                for current_overlap in table[x+i][y+j]:
+                    overlap[current_overlap] = True
+
+for key, value in overlap.items():
+    if not value:
+        print(key)
