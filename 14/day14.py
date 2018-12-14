@@ -1,10 +1,10 @@
 # Part 1:
+data = open("input14").read().split("\n")[0]
 recipes = [3, 7]
 elf1 = 0
 elf2 = 1
 
-num_of_recipes = 990941 + 10
-num_of_recipes = 9 + 10
+num_of_recipes = int(data) + 10
 
 while(len(recipes) < num_of_recipes):
 	new_recipe = recipes[elf1] + recipes[elf2]
@@ -23,7 +23,7 @@ recipes = [3, 7]
 elf1 = 0
 elf2 = 1
 
-seq = 990941
+seq = int(data)
 sequence = [int(x) for x in str(seq)]
 
 found_sequence = False
